@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HApps</title>
+<meta name="description" content="Small apps and games by HApps.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F6F8;
+    --card: #FFFFFF;
+    --text: #1F2328;
+    --muted: #667085;
+    --line: #E1E4E8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1114;
+      --card: #181B20;
+      --text: #E7E9EC;
+      --muted: #98A2B3;
+      --line: #2A2F36;
+    }
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 56px 20px 64px; }
+  header { margin-bottom: 40px; }
+  h1 { margin: 0 0 4px; font-size: 1.9rem; letter-spacing: .3px; }
+  .tagline { margin: 0; color: var(--muted); }
+  h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+  .app {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px 20px; margin-bottom: 14px;
+  }
+  .app img { width: 64px; height: 64px; border-radius: 16px; flex: none; }
+  .app strong { display: block; font-size: 1.1rem; margin-bottom: 2px; }
+  .app p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .app .links { margin-top: 10px; font-size: .9rem; }
+  .app .links a { color: var(--accent, var(--text)); text-decoration: none; margin-right: 16px; font-weight: 600; }
+  .app .links a:hover { text-decoration: underline; }
+  footer { margin-top: 48px; font-size: .85rem; color: var(--muted); }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>HApps</h1>
+    <p class="tagline">Small apps and games, made with 💗</p>
+  </header>
+
+  <h2>Apps</h2>
+
+  <div class="app" style="--accent: #C9557F">
+    <img src="purrsuit/icon-512.png" alt="Purrsuit icon">
+    <div>
+      <strong>Purrsuit 🐾</strong>
+      <p>A tiny cheer-cat for your big dreams. Goals, focus sessions and streaks, with a cat who lives in the room you decorate. Android, offline, no account.</p>
+      <div class="links">
+        <a href="purrsuit/">About</a>
+        <a href="purrsuit/privacy.html">Privacy policy</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Contact: <a href="mailto:hodaifa.contact@gmail.com">hodaifa.contact@gmail.com</a></footer>
+</div>
+</body>
+</html>
