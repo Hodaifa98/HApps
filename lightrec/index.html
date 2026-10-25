@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LightRec: the screen recorder that stays out of your way</title>
+<meta name="description" content="LightRec is a free, portable screen recorder for Windows and Linux with a Gamer mode: instant replay, long session recording, GPU encoding. No install, no account, no watermark.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F5F6F8;
+    --card: #FFFFFF;
+    --text: #1F2328;
+    --muted: #667085;
+    --line: #E1E4E8;
+    --accent: #FF4D5E;
+    --accent-2: #4F8CFF;
+    --hero: linear-gradient(135deg, #1B1E26, #13151A);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F1114;
+      --card: #181B20;
+      --text: #E7E9EC;
+      --muted: #98A2B3;
+      --line: #2A2F36;
+    }
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  header {
+    background: var(--hero); color: #E9EBF1;
+    border-radius: 20px; padding: 36px 24px 30px; margin-bottom: 28px;
+    border: 1px solid #2E3342; text-align: center;
+  }
+  header img { width: 96px; height: 96px; border-radius: 22px; display: block; margin: 0 auto 14px; }
+  h1 { margin: 0 0 6px; font-size: 2rem; letter-spacing: .3px; }
+  .tagline { margin: 0 0 4px; font-size: 1.1rem; color: #E9EBF1; }
+  .sub { margin: 0; color: #8B91A3; }
+  .buttons { margin-top: 22px; }
+  .buttons a {
+    display: inline-block; margin: 6px; padding: 11px 22px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    border-radius: 999px; font-weight: 700;
+  }
+  .buttons a.alt { background: #2D3240; }
+  .buttons a:hover { filter: brightness(1.08); }
+  .note { font-size: .85rem; color: #8B91A3; margin: 12px 0 0; }
+  h2 { color: var(--accent); font-size: 1.15rem; margin-top: 2em; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 20px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; }
+  .card strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  ul { padding-left: 1.2em; }
+  li { margin: .4em 0; }
+  code { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: .9em; }
+  .shots { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 24px 0; }
+  .shots img { width: 46%; min-width: 240px; max-width: 340px; border-radius: 14px; border: 1px solid var(--line); }
+  a { color: var(--accent-2); }
+  footer { margin-top: 40px; text-align: center; font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="icon-512.png" alt="LightRec icon">
+    <h1>LightRec</h1>
+    <p class="tagline">The screen recorder that stays out of your way.</p>
+    <p class="sub">One small window. No install, no account, no watermark, no upload.</p>
+    <div class="buttons">
+      <a href="https://github.com/Hodaifa98/light_rec.py/releases/latest/download/LightRec-windows-x64.zip">Download for Windows</a>
+      <a href="https://github.com/Hodaifa98/light_rec.py/releases/latest/download/LightRec-linux-x64.tar.gz">Download for Linux</a>
+      <a class="alt" href="https://github.com/Hodaifa98/light_rec.py">Source on GitHub</a>
+    </div>
+    <p class="note">Portable builds with ffmpeg inside. Unzip, double-click, record. Free and open source (MIT).</p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <strong>🎯 Point and record</strong>
+      <p>Full screen, an area you drag out, or one window. Mic and system audio with live meters. Pause, countdown, global shortcuts. Standard .mp4 that plays everywhere.</p>
+    </div>
+    <div class="card">
+      <strong>🎮 Gamer mode</strong>
+      <p>Instant replay keeps your last 15 s to 2 min ready; one key saves it. Record whole sessions on the GPU. Alt-tab all you want, nothing breaks.</p>
+    </div>
+    <div class="card">
+      <strong>🔒 Yours only</strong>
+      <p>Nothing leaves your PC. No telemetry, no cloud, no time limit. Hide windows from the recording and keep your notes on screen without recording them.</p>
+    </div>
+  </div>
+
+  <h2>Gamer mode: the Game Bar replacement</h2>
+  <p>Ever lost a clip because Game Bar "stopped recording" the moment you tabbed out? Gamer mode records the whole display, not a window, so switching to Chrome or Discord in the middle of a match changes nothing.</p>
+  <ul>
+    <li><strong>Instant replay.</strong> Keep the last 15 s, 30 s, 1 min or 2 min of gameplay in memory. Press <code>Ctrl+Shift+S</code> and the clip is saved, with a small notice in the corner. Each save empties the buffer, so two presses never save the same moment twice.</li>
+    <li><strong>Long sessions.</strong> <code>Ctrl+Shift+R</code> records for hours. Instant replay keeps working while a session records.</li>
+    <li><strong>GPU encoding.</strong> NVIDIA NVENC, AMD AMF or Intel Quick Sync, picked automatically, so the CPU stays free for the game.</li>
+    <li><strong>Lives in the tray.</strong> Run in background and LightRec sits next to the clock: blue when replay is ready, red when recording. Right-click to save, record, open or quit. Start it with <code>--tray</code> from your Startup folder and it is simply always there.</li>
+  </ul>
+
+  <div class="shots">
+    <img src="shot-recorder.png" alt="LightRec recorder view">
+    <img src="shot-gamer.png" alt="LightRec gamer mode">
+  </div>
+
+  <h2>Recorder mode</h2>
+  <ul>
+    <li>Record the full screen, an area you drag out, or a single window (on Windows the window itself, even when other windows cover it).</li>
+    <li>Hide windows from the recording: on Windows they are replaced by whatever is behind them, so viewers never know they were there.</li>
+    <li>A built-in Notes panel for your script that never shows up in the video.</li>
+    <li>Microphone and system audio, mixed into the video. Pause, a 3-second countdown, a floating control bar, 15 to 60 fps, three quality levels.</li>
+  </ul>
+
+  <h2>Good to know</h2>
+  <ul>
+    <li><strong>Windows 10 / 11.</strong> The exe isn't code-signed, so SmartScreen may ask once: <em>More info</em>, then <em>Run anyway</em>.</li>
+    <li><strong>Linux.</strong> X11 sessions. System audio through PulseAudio / PipeWire monitors; window recording needs <code>wmctrl</code>.</li>
+    <li><strong>Black video in a game?</strong> Exclusive-fullscreen games bypass the desktop. Switch the game to borderless window mode.</li>
+  </ul>
+
+  <h2>Private by design</h2>
+  <p>LightRec makes no network connections except, if you choose it, the one-time ffmpeg download when running from source. Recordings go to the folder you pick and nowhere else. The code is open: <a href="https://github.com/Hodaifa98/light_rec.py">github.com/Hodaifa98/light_rec.py</a>.</p>
+
+  <footer>Made with 💗 by HApps · <a href="../">All apps</a> · <a href="mailto:hodaifa.contact@gmail.com">Contact</a></footer>
+</div>
+</body>
+</html>
